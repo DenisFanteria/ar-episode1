@@ -4,7 +4,7 @@ nav {
   width: 100%;
   height: 100%;
   z-index: 1;
-  //display: none;
+  display: none;
   position: fixed;
   overflow: hidden;
   background: $yellow;
@@ -22,10 +22,11 @@ nav {
       transition: 0.4s ease;
     }
     &:hover {
+      color: pink;
       &:after {
         width: 100%;
-        left:0;
-        background-color: $black;
+        left: 0;
+        background: $black;
       }
     }
   }
@@ -35,9 +36,9 @@ nav {
     padding: 0 32px;
     @include media("<=654px") {
       flex-direction: column;
-    }
-    @include media("<=phone") {
-      padding: 0 16px;
+      @include media("<=phone") {
+        padding: 0 16px;
+      }
     }
     .nav-column {
       width: 45%;
@@ -54,32 +55,12 @@ nav {
         margin-bottom: 3rem;
         font-size: 1.2rem;
         @include media("<=tablet") {
-          margin-bottom: 1.4rem;
           font-size: 1rem;
+          margin-bottom: 1.4rem;
         }
         @include media("<=phone") {
-          margin-bottom: 1.2rem;
           font-size: 0.875rem;
-        }
-      }
-      .nav-links {
-        padding: 0;
-        margin: 0;
-        li {
-          list-style: none;
-          margin-bottom: 2.8rem;
-          @include media("<=phone") {
-            margin-bottom: 1.6rem;
-          }
-          a {
-            font-weight: 600;
-            font-size: 2.8rem;
-            text-decoration: none;
-            color: $black;
-            @include media("<=phone") {
-              font-size: 2rem;
-            }
-          }
+          margin-bottom: 1.2rem;
         }
       }
       .nav-infos {
@@ -92,7 +73,7 @@ nav {
           padding: 0;
           width: 50%;
           &:nth-child(2),
-          :nth-child(3) {
+          &:nth-child(3) {
             @include media("<=654px") {
               display: none;
             }
@@ -116,6 +97,26 @@ nav {
             a {
               text-decoration: none;
               color: $black;
+            }
+          }
+        }
+      }
+      .nav-links {
+        padding: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          margin-bottom: 2.4rem;
+          @include media("<=phone") {
+            margin-bottom: 1.6rem;
+          }
+          a {
+            font-weight: 600;
+            font-size: 2.8rem;
+            text-decoration: none;
+            color: $black;
+            @include media("<=phone") {
+              font-size: 2rem;
             }
           }
         }

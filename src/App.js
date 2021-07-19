@@ -32,7 +32,7 @@ function debounce(fn, ms) {
   };
 }
 
-function App() {
+function App  () {
   //empêche les flash lors des fast reload
   gsap.to("body", 0, { css: { visibility: "visible" } });
   const [dimensions, setDimensions] = useState({
@@ -60,7 +60,7 @@ function App() {
   });
   return (
     <>
-      <Header />
+      <Header dimensions={dimensions} />
       <div className="App">
         {routes.map(({ path, Component }) => (
           <Route key={"path"} exact path={path}>
@@ -71,6 +71,6 @@ function App() {
       <Navigation />
     </>
   );
-}
+};
 
 export default App;
